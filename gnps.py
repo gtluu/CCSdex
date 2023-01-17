@@ -1,18 +1,12 @@
 import numpy as np
 import pandas as pd
 import argparse
+import os
 
 
 def get_args():
     parser = argparse.ArgumentParser()
-
-    optional = parser.add_argument_group('Optional Parameters')
-    optional.add_argument('--output', help='prediction results directory', default='', type=str)
-
-    predict = parser.add_argument_group('Prediction Parameters')
-    predict.add_argument('--model', help='model to be used to predict CCS. if not specified, a default model is used',
-                         default='models/UnifiedCCSCompendium_cleaned_2022-10-25/model.ccsp2', type=str)
-
+    parser.add_argument('--output', help='output directory', default='', type=str)
     return vars(parser.parse_args())
 
 
@@ -40,5 +34,6 @@ def get_gnps_df():
 
 
 if __name__ == '__main__':
+    args = get_args()
     gnps = get_gnps_df()
-    gnps.to_csv('data/gnps.csv', index=False)
+    gnps.to_csv(os.path.join(args['output'], 'gnps.csv'), index=False)
