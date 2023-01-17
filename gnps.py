@@ -1,11 +1,6 @@
 import numpy as np
 import pandas as pd
-import datetime
-import pickle
-from ccsp2.arguments import *
-from ccsp2.data_io import *
-from ccsp2.model import *
-from ccsp2.predict import *
+import argparse
 
 
 def get_args():
