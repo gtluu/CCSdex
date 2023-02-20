@@ -4,4 +4,5 @@ pandas
 dash
 dash-extensions
 dash-bootstrap-components
+dash-table
 plotly
