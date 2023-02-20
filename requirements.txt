@@ -1,8 +1,8 @@
+lxml
 numpy
 pandas
-lxml
-flask
-flask_sqlalchemy
-flask_wtf
-wtforms
-sqlalchemy
+dash
+dash-extensions
+dash-bootstrap-components
+dash-table
+plotly
