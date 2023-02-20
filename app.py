@@ -16,6 +16,15 @@ def get_table(df, mz=None, mz_tol=None, ccs=None, ccs_tol=None):
              'PROVIDED FOR CCSDEX.'
     about3 = 'CCSdex is licensed under a Creative Commons Attribution 4.0 International License.'
 
+    if mz == '':
+        mz = None
+    if mz_tol == '':
+        mz_tol = None
+    if ccs == '':
+        ccs = None
+    if ccs_tol == '':
+        ccs_tol = None
+    
     if mz is not None and mz_tol is not None and ccs is not None and ccs_tol is not None:
         df = df.loc[(df['m/z'] >= (float(mz) - float(mz_tol))) &
                     (df['m/z'] <= (float(mz) + float(mz_tol))) &
