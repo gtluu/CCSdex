@@ -1,9 +1,6 @@
-import plotly.express as px
-from dash import Dash, dcc, html, State, callback_context, dash_table
+from dash import dcc, html, State, callback_context, dash_table
 from dash_extensions.enrich import Input, Output, DashProxy, MultiplexerTransform
-import dash_bootstrap_components as dbc
 import dash_table
-import os
 import pandas as pd
 
 
@@ -24,7 +21,7 @@ def get_table(df, mz=None, mz_tol=None, ccs=None, ccs_tol=None):
         ccs = None
     if ccs_tol == '':
         ccs_tol = None
-    
+
     if mz is not None and mz_tol is not None and ccs is not None and ccs_tol is not None:
         df = df.loc[(df['m/z'] >= (float(mz) - float(mz_tol))) &
                     (df['m/z'] <= (float(mz) + float(mz_tol))) &
